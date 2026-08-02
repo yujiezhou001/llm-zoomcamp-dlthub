@@ -1,0 +1,20 @@
+# put your configuration values here
+
+[runtime]
+log_level="WARNING"  # the system log level of dlt
+# use the dlthub_telemetry setting to enable/disable anonymous usage data reporting, see https://dlthub.com/docs/reference/telemetry
+dlthub_telemetry = true
+workspace_id = "664be49c-d0eb-4dca-a96d-2a5e6fd6ac3a"
+organization_id = "0014ef2e-3b58-48a0-aabb-85191f255c79"
+
+[sources.agent_traces]
+# Claude Code Agent Logs API — public, no auth
+base_url = "https://test-agent-traces-api-xt2e7ottma-ew.a.run.app/"
+
+[sources.filesystem]
+# root of the local Claude Code session-log directory; the glob lives in filesystem_pipeline.py
+bucket_url = "file:///home/codespace/.claude/projects"
+
+
+[workspace.settings]
+name = "playground"

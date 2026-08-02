@@ -1,0 +1,8 @@
+# Dev profile — local iteration.
+# Fresh timestamped dataset per run, matching the local workflow.
+dev_mode = true
+
+# Named destination "playground" — the alias the pipeline targets.
+# Locally it is a plain local DuckDB file.
+[destination.playground]
+destination_type = "duckdb"

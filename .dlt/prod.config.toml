@@ -1,0 +1,16 @@
+# Prod profile — dltHub Platform runtime.
+# One stable dataset: a per-run dataset would accumulate copies on every run.
+dev_mode = false
+
+# Named destination "playground".
+#
+# NOTE: on the dltHub runtime this block does NOT apply. The workspace provides
+# its own managed destination named `playground` (a filesystem destination
+# writing Delta tables) and that definition wins — which is why the job needs
+# the `deltalake` extra in pyproject.toml. Unlike a local DuckDB file, the
+# managed destination persists between runs.
+#
+# This block only governs LOCAL prod simulation (`dlthub local run --profile
+# prod`), where there is no managed destination to resolve.
+[destination.playground]
+destination_type = "duckdb"
